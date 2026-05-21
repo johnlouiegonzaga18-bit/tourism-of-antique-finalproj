@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antique Tourism — Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="custom-navbar navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="images/antique-seal.png" class="logo-img" alt="Seal">
+      <span>Antique Tourism</span>
+    </a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon d-lg-none">Menu</label>
+    <div class="nav-wrapper ms-auto">
+      <ul class="navbar-nav align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="destinations.html">Destinations</a>
+          <ul class="dropdown-menu">
+            <li><a href="destinations.html#mararison">Mararison Island</a></li>
+            <li><a href="destinations.html#tibiao">Tibiao</a></li>
+            <li><a href="destinations.html#malumpati">Malumpati Cold Spring</a></li>
+            <li><a href="destinations.html#rice">Rice Terraces</a></li>
+            <li><a href="destinations.html#aningalan">Aningalan</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="festivals.html">Festivals &amp; Culture</a></li>
+        <li class="nav-item"><a class="nav-link" href="food.html">Food &amp; Delicacies</a></li>
+        <li class="nav-item"><a class="nav-link" href="tips.html">Travel Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="inquiry.html">Inquiry</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="section-label">Welcome to Antique</span>
+    <h1 class="mt-2"> <span style="color:var(--accent);">Antique: Hidden Paradise of the Philippines</span><br></h1>
+    <p class="lead mt-3">Explore Antique: discover beaches, heritage, food, festivals, and adventure in Western Visayas.</p>
+    <a href="destinations.html" class="hero-btn">Explore Destinations</a>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="py-5" style="background:#f0f7fa;">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <span class="section-label">The Province</span>
+        <h2 class="section-title mt-1">About Antique</h2>
+        <div class="section-divider" style="margin:0 0 20px;"></div>
+        <p class="text-muted lh-lg">
+          Antique is a peaceful province on the western coast of Panay Island, known for its unspoiled natural beauty
+          and rich cultural heritage. From pristine beaches and hidden islands to cool mountain landscapes,
+          it offers a quiet escape from crowded tourist spots.
+        </p>
+        <a href="about.html" class="btn btn-outline-primary mt-3 rounded-pill px-4" style="border-color:var(--navy);color:var(--navy);">Learn More</a>
+      </div>
+      <div class="col-lg-7">
+        <div class="media-frame rounded shadow" style="height:320px;">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Island%20off%20Culasi%2C%20Antique.jpg" class="image-fill" alt="Antique Province Overview">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE CAROUSEL -->
+<section class="container my-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="section-title mb-0">Explore Antique</h2>
+  </div>
+  <div class="carousel-scroll">
+
+    <a href="destinations.html" class="text-decoration-none custom-card">
+      <div class="card shadow-sm">
+        <img src="images/destinations.jpg" alt="Top Destinations">
+        <div class="card-body text-center"><h5>Top Destinations</h5></div>
+      </div>
+    </a>
+
+    <a href="festivals.html" class="text-decoration-none custom-card">
+      <div class="card shadow-sm">
+        <img src="images/festivals.jpg" alt="Festivals">
+        <div class="card-body text-center"><h5>Festivals &amp; Culture</h5></div>
+      </div>
+    </a>
+
+    <a href="gallery.html" class="text-decoration-none custom-card">
+      <div class="card shadow-sm">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Island%20off%20Culasi%2C%20Antique.jpg" alt="Photo Gallery">
+        <div class="card-body text-center"><h5>Photo Gallery</h5></div>
+      </div>
+    </a>
+
+    <a href="food.html" class="text-decoration-none custom-card">
+      <div class="card shadow-sm">
+        <img src="images/food.jpg" alt="Food and Delicacies">
+        <div class="card-body text-center"><h5>Food &amp; Delicacies</h5></div>
+      </div>
+    </a>
+
+    <a href="tips.html" class="text-decoration-none custom-card">
+      <div class="card shadow-sm">
+        <img src="images/adventure.JPG" alt="Travel Tips">
+        <div class="card-body text-center"><h5>Travel Tips</h5></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- QUICK LINKS -->
+<section class="container my-5">
+  <div class="text-center mb-4">
+    <span class="section-label">Start Exploring</span>
+    <h2 class="section-title mt-1">Plan by Interest</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="quick-link-grid" id="quickLinks"></div>
+</section>
+
+<!-- STATS -->
+<section class="stat-strip">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-3">
+        <div class="stat-number">18+</div>
+        <div class="stat-label">Municipalities</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Top Destinations</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Major Festivals</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Memories to Make</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VISIT -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <span class="section-label">Reasons to Visit</span>
+    <h2 class="section-title mt-1">Why Choose Antique?</h2>
+    <div class="section-divider"></div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm why-card border-0">
+          <img src="images/nature.jpg" class="why-img" alt="Antique nature">
+          <div class="card-body">
+            <h5 class="fw-semibold">Natural Beauty</h5>
+            <p class="text-muted mb-0">Explore untouched beaches, waterfalls, and scenic mountain landscapes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm why-card border-0">
+          <img src="images/culture.jpg" class="why-img" alt="Antique culture">
+          <div class="card-body">
+            <h5 class="fw-semibold">Rich Culture</h5>
+            <p class="text-muted mb-0">Experience vibrant traditions, festivals, and the warmth of Antiqueño hospitality.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm why-card border-0">
+          <img src="images/adventure.JPG" class="why-img" alt="Antique adventure">
+          <div class="card-body">
+            <h5 class="fw-semibold">Adventure</h5>
+            <p class="text-muted mb-0">Enjoy hiking, kawa baths, river tubing, and island hopping.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="custom-footer text-white pt-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-3 mb-4">
+        <img src="images/antique-seal.png" width="56" class="mb-2 mx-auto mx-md-0 d-block d-md-inline" alt="Seal">
+        <h5 class="mt-2">Antique Tourism</h5>
+        <p>Discover the hidden paradise!</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6>Explore</h6>
+        <ul>
+          <li><a href="festivals.html">Festivals &amp; Culture</a></li>
+          <li><a href="food.html">Food &amp; Delicacies</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="tips.html">Travel Tips</a></li>
+          <li><a href="inquiry.html">Inquiry</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6>Location</h6>
+        <p>Western Visayas, Antique, Philippines</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom text-center py-3">© 2026 Antique Tourism. All rights reserved.</div>
+</footer>
+
+<script>
+const homepageStats = [
+  { number: '18+', label: 'Municipalities' },
+  { number: '8', label: 'Featured Destinations' },
+  { number: '3', label: 'Major Festivals' },
+  { number: '30', label: 'Gallery Photos' }
+];
+
+document.querySelectorAll('.stat-strip .col-6').forEach((column, index) => {
+  if (!homepageStats[index]) return;
+  column.querySelector('.stat-number').textContent = homepageStats[index].number;
+  column.querySelector('.stat-label').textContent = homepageStats[index].label;
+});
+
+const quickLinks = [
+  { label: 'Destinations', href: 'destinations.html', image: 'images/destinations.jpg' },
+  { label: 'Festivals', href: 'festivals.html', image: 'images/festivals.jpg' },
+  { label: 'Food', href: 'food.html', image: 'images/food.jpg' },
+  { label: 'Gallery', href: 'gallery.html', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Island%20off%20Culasi%2C%20Antique.jpg' },
+  { label: 'Travel Tips', href: 'tips.html', image: 'images/adventure.JPG' },
+  { label: 'Inquiry', href: 'inquiry.html', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Island%20off%20Culasi%2C%20Antique.jpg' }
+];
+
+document.getElementById('quickLinks').innerHTML = quickLinks.map(link => `
+  <a class="quick-link-card rounded shadow d-block" href="${link.href}">
+    <img src="${link.image}" class="image-fill" alt="${link.label}">
+    <div class="quick-link-label">${link.label}</div>
+  </a>
+`).join('');
+</script>
+<script src="Scripts/site.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Destinations | Antique Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+
+<nav class="custom-navbar navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="images/antique-seal.png" class="logo-img" alt="Seal">
+      <span>Antique Tourism</span>
+    </a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon d-lg-none">Menu</label>
+    <div class="nav-wrapper ms-auto">
+      <ul class="navbar-nav align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link active" href="destinations.html">Destinations</a>
+          <ul class="dropdown-menu">
+            <li><a href="#destinationsGrid">Mararison Island</a></li>
+            <li><a href="#destinationsGrid">Tibiao River and Kawa Bath</a></li>
+            <li><a href="#destinationsGrid">Malumpati Cold Spring</a></li>
+            <li><a href="#destinationsGrid">Antique Rice Terraces</a></li>
+            <li><a href="#destinationsGrid">Aningalan</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="festivals.html">Festivals &amp; Culture</a></li>
+        <li class="nav-item"><a class="nav-link" href="food.html">Food &amp; Delicacies</a></li>
+        <li class="nav-item"><a class="nav-link" href="tips.html">Travel Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="inquiry.html">Inquiry</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="sub-hero dest-bg">
+  <div class="container">
+    <h1>Top Destinations</h1>
+    <p class="lead">Explore the beaches, mountains, springs, and heritage of Antique</p>
+  </div>
+</section>
+
+<section class="container my-5">
+  <div class="info-box p-4 p-md-5">
+    <span class="section-label">Where to Go</span>
+    <h2 class="section-title mt-1">Discover Antique's Best Spots</h2>
+    <div class="section-divider" style="margin:0 0 20px;"></div>
+    <p class="text-muted mb-0">Use the search box and category filter to find a destination by name, municipality, or activity type. Destination cards below are generated from a JavaScript array.</p>
+  </div>
+</section>
+
+<section class="container my-5">
+  <div class="destination-controls">
+    <div>
+      <label for="destinationSearch" class="form-label fw-semibold">Search destination</label>
+      <input type="search" id="destinationSearch" class="form-control" placeholder="Search by name, municipality, or category">
+    </div>
+    <div>
+      <label for="categoryFilter" class="form-label fw-semibold">Filter by category</label>
+      <select id="categoryFilter" class="form-select">
+        <option value="All">All</option>
+        <option value="Beach">Beach</option>
+        <option value="Mountain">Mountain</option>
+        <option value="Waterfall">Waterfall</option>
+        <option value="Historical Site">Historical Site</option>
+        <option value="Island">Island</option>
+        <option value="Food Destination">Food Destination</option>
+        <option value="Adventure">Adventure</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="filter-btns mb-4" id="categoryButtons">
+    <button class="gallery-filter active-filter btn rounded-pill px-4" type="button" data-category="All">All</button>
+    <button class="gallery-filter btn rounded-pill px-4" type="button" data-category="Beach">Beach</button>
+    <button class="gallery-filter btn rounded-pill px-4" type="button" data-category="Mountain">Mountain</button>
+    <button class="gallery-filter btn rounded-pill px-4" type="button" data-category="Waterfall">Waterfall</button>
+    <button class="gallery-filter btn rounded-pill px-4" type="button" data-category="Historical Site">Historical Site</button>
+    <button class="gallery-filter btn rounded-pill px-4" type="button" data-category="Island">Island</button>
+    <button class="gallery-filter btn rounded-pill px-4" type="button" data-category="Food Destination">Food Destination</button>
+    <button class="gallery-filter btn rounded-pill px-4" type="button" data-category="Adventure">Adventure</button>
+  </div>
+
+  <div id="resultCount" class="text-muted small mb-3"></div>
+  <div class="row g-4 balanced-grid" id="destinationsGrid"></div>
+</section>
+
+<div class="modal fade" id="destinationModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content destination-modal">
+      <div class="modal-header">
+        <div>
+          <span class="tag" id="modalCategory"></span>
+          <h5 class="modal-title mt-2" id="modalTitle"></h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="media-frame rounded mb-4" id="modalImage" style="height:260px;"></div>
+        <p id="modalDescription" class="text-muted"></p>
+        <div class="row g-3 destination-detail-list">
+          <div class="col-md-6"><strong>Location:</strong><span id="modalLocation"></span></div>
+          <div class="col-md-6"><strong>Activities:</strong><span id="modalActivities"></span></div>
+          <div class="col-md-6"><strong>Best time to visit:</strong><span id="modalBestTime"></span></div>
+          <div class="col-md-6"><strong>Entrance fee:</strong><span id="modalFee"></span></div>
+          <div class="col-md-6"><strong>Opening hours:</strong><span id="modalHours"></span></div>
+          <div class="col-md-6"><strong>Travel tips:</strong><span id="modalTips"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="custom-footer text-white pt-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-3 mb-4">
+        <img src="images/antique-seal.png" width="56" class="mb-2 mx-auto mx-md-0 d-block d-md-inline" alt="Seal">
+        <h5 class="mt-2">Antique Tourism</h5>
+        <p>Discover the hidden paradise!</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6>Explore</h6>
+        <ul>
+          <li><a href="festivals.html">Festivals &amp; Culture</a></li>
+          <li><a href="food.html">Food &amp; Delicacies</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="tips.html">Travel Tips</a></li>
+          <li><a href="inquiry.html">Inquiry</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6>Location</h6>
+        <p>Western Visayas, Antique, Philippines</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom text-center py-3">Copyright 2026 Antique Tourism. All rights reserved.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const destinations = [
+  {
+    name: 'Mararison Island',
+    id: 'mararison',
+    municipality: 'Culasi',
+    category: 'Island',
+    imageText: 'Mararison Island',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Island%20off%20Culasi%2C%20Antique.jpg',
+    shortDescription: 'A teardrop-shaped island known for white sand, rolling hills, snorkeling, and quiet coastal views.',
+    fullDescription: 'Mararison Island, also called Malalison Island, is one of Antique\'s most scenic island destinations. Visitors can enjoy beach swimming, a short hill trek, local homestays, and boat rides from Culasi.',
+    fee: 'Boat fee and guide fees may apply',
+    hours: 'Day trips usually start early morning',
+    activities: 'Island hopping, swimming, snorkeling, hiking',
+    bestTime: 'November to May',
+    tips: 'Bring sun protection, drinking water, and cash for boat and guide fees.'
+  },
+  {
+    name: 'Tibiao River and Kawa Bath',
+    id: 'tibiao',
+    municipality: 'Tibiao',
+    category: 'Adventure',
+    imageText: 'Tibiao River and Kawa Bath',
+    image: 'images/tibiao.jpg',
+    shortDescription: 'A nature and adventure destination famous for kawa hot baths, river tubing, kayaking, and eco-lodges.',
+    fullDescription: 'Tibiao combines river adventure with a relaxing kawa hot bath experience. It is popular for groups who want outdoor activities followed by a warm herbal bath in a large iron wok.',
+    fee: 'Activity rates vary by resort or guide',
+    hours: 'Usually 8:00 AM to 5:00 PM',
+    activities: 'Kawa bath, river tubing, kayaking, trekking',
+    bestTime: 'Dry months from November to May',
+    tips: 'Book activities ahead during weekends and bring clothes suitable for water activities.'
+  },
+  {
+    name: 'Malumpati Cold Spring',
+    id: 'malumpati',
+    municipality: 'Pandan',
+    category: 'Waterfall',
+    imageText: 'Malumpati Cold Spring',
+    image: 'images/nature.jpg',
+    shortDescription: 'A refreshing blue-green cold spring surrounded by trees and picnic areas.',
+    fullDescription: 'Malumpati Cold Spring is one of Pandan\'s most visited natural attractions. Its cool, clear water makes it ideal for swimming, family picnics, and nature relaxation.',
+    fee: 'Entrance fee may apply',
+    hours: 'Usually daytime hours',
+    activities: 'Swimming, picnics, nature photography',
+    bestTime: 'Morning visits during dry season',
+    tips: 'Arrive early for a better spot and keep the spring area clean.'
+  },
+  {
+    name: 'Antique Rice Terraces',
+    id: 'rice',
+    municipality: 'San Remigio',
+    category: 'Mountain',
+    imageText: 'Antique Rice Terraces',
+    image: 'images/rice.jpg',
+    shortDescription: 'Scenic mountain rice terraces that show Antique\'s highland farming heritage.',
+    fullDescription: 'The rice terraces in Antique\'s highland areas reflect generations of local farming knowledge. They are best appreciated through guided visits, photography stops, and respectful community tours.',
+    fee: 'Guide or community fees may apply',
+    hours: 'Best visited during daylight',
+    activities: 'Photography, hiking, cultural learning',
+    bestTime: 'Planting and harvest seasons',
+    tips: 'Wear comfortable footwear and ask permission before entering farms.'
+  },
+  {
+    name: 'Aningalan Highland Garden',
+    id: 'aningalan',
+    municipality: 'San Remigio',
+    category: 'Mountain',
+    imageText: 'Aningalan Highland Garden',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Brgy%20Aningalan%2C%20San%20Remegio%2C%20Antique.JPG',
+    shortDescription: 'A cool mountain retreat with flower gardens, vegetable farms, and scenic viewpoints.',
+    fullDescription: 'Aningalan is often called the summer capital of Antique because of its cool climate. It is known for flower gardens, fresh produce, and relaxing highland views.',
+    fee: 'Some gardens may collect a small entrance fee',
+    hours: 'Daytime visits recommended',
+    activities: 'Garden visits, sightseeing, photography',
+    bestTime: 'Morning or late afternoon',
+    tips: 'Bring a light jacket because the highland air can be cool.'
+  },
+  {
+    name: 'Seco Island',
+    id: 'seco',
+    municipality: 'Tibiao',
+    category: 'Beach',
+    imageText: 'Seco Island Sandbar',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Seco%20Island%2C%20Antique.jpg',
+    shortDescription: 'A remote white sandbar destination popular for beach trips and kiteboarding.',
+    fullDescription: 'Seco Island is a remote sandbar with clear waters and wide open scenery. Because it is far from the mainland, trips require planning, good weather, and proper boat arrangements.',
+    fee: 'Boat rental and environmental fees may apply',
+    hours: 'Day trips depend on weather and tide',
+    activities: 'Beach camping, swimming, kiteboarding',
+    bestTime: 'Calm sea months from March to May',
+    tips: 'Check weather conditions and bring enough supplies because facilities are limited.'
+  },
+  {
+    name: 'Patnongon Ruins',
+    id: 'patnongon',
+    municipality: 'Patnongon',
+    category: 'Historical Site',
+    imageText: 'Patnongon Ruins',
+    image: 'images/patnongon.jpg',
+    shortDescription: 'A heritage site that gives visitors a glimpse of Antique\'s Spanish colonial past.',
+    fullDescription: 'Patnongon Ruins is a historical attraction for visitors interested in old structures and local heritage. It adds cultural depth to trips focused on nature and adventure.',
+    fee: 'Free or minimal local fees',
+    hours: 'Daytime visits recommended',
+    activities: 'Heritage walk, photography, local history',
+    bestTime: 'Any clear day',
+    tips: 'Respect the site and avoid climbing fragile structures.'
+  },
+  {
+    name: 'San Jose Food Stops',
+    id: 'san-jose-food',
+    municipality: 'San Jose de Buenavista',
+    category: 'Food Destination',
+    imageText: 'San Jose Local Food',
+    image: 'https://images.topgear.com.ph/topgear/images/2024/02/15/don-segundo-house-of-antiques-and-restaurant-la-union-1707980896.jpg',
+    shortDescription: 'The provincial capital offers local eateries, markets, and delicacies for food-focused travelers.',
+    fullDescription: 'San Jose de Buenavista is a practical stop for trying Antique dishes and buying pasalubong. Visitors can explore carinderias, markets, and small restaurants serving local favorites.',
+    fee: 'Depends on restaurant or market purchase',
+    hours: 'Most food stops open from morning to evening',
+    activities: 'Food tasting, market visit, pasalubong shopping',
+    bestTime: 'Lunch or early dinner',
+    tips: 'Bring cash and ask locals for daily specials.'
+  }
+];
+
+const grid = document.getElementById('destinationsGrid');
+const searchInput = document.getElementById('destinationSearch');
+const categoryFilter = document.getElementById('categoryFilter');
+const resultCount = document.getElementById('resultCount');
+const destinationModal = new bootstrap.Modal(document.getElementById('destinationModal'));
+
+function renderDestinations() {
+  const query = searchInput.value.trim().toLowerCase();
+  const category = categoryFilter.value;
+  const filtered = destinations.filter(destination => {
+    const searchable = `${destination.name} ${destination.municipality} ${destination.category}`.toLowerCase();
+    const matchesSearch = searchable.includes(query);
+    const matchesCategory = category === 'All' || destination.category === category;
+    return matchesSearch && matchesCategory;
+  });
+
+  resultCount.textContent = `${filtered.length} destination${filtered.length === 1 ? '' : 's'} found`;
+  grid.innerHTML = filtered.map(destination => {
+    const index = destinations.indexOf(destination);
+    return `
+      <div class="col-md-6 col-xl-4 d-flex" id="${destination.id}">
+        <article class="card h-100 destination-card">
+        <img src="${destination.image}" class="destination-card-img image-fill" alt="${destination.imageText}">
+          <div class="card-body d-flex flex-column">
+            <span class="tag">${destination.category}</span>
+            <h5>${destination.name}</h5>
+            <p class="text-muted mb-2">${destination.municipality}</p>
+            <p class="text-muted flex-grow-1">${destination.shortDescription}</p>
+            <div class="destination-meta">
+              <span>${destination.fee}</span>
+              <span>${destination.hours}</span>
+            </div>
+            <button type="button" class="btn btn-primary rounded-pill mt-3" onclick="showDestination(${index})">View Details</button>
+          </div>
+        </article>
+      </div>
+    `;
+  }).join('');
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="col-12"><div class="alert alert-info">No destinations match your search.</div></div>';
+  }
+}
+
+function showDestination(index) {
+  const destination = destinations[index];
+  document.getElementById('modalCategory').textContent = destination.category;
+  document.getElementById('modalTitle').textContent = destination.name;
+  document.getElementById('modalImage').innerHTML = `<img src="${destination.image}" class="image-fill" alt="${destination.imageText}">`;
+  document.getElementById('modalDescription').textContent = destination.fullDescription;
+  document.getElementById('modalLocation').textContent = `${destination.municipality}, Antique`;
+  document.getElementById('modalActivities').textContent = destination.activities;
+  document.getElementById('modalBestTime').textContent = destination.bestTime;
+  document.getElementById('modalFee').textContent = destination.fee;
+  document.getElementById('modalHours').textContent = destination.hours;
+  document.getElementById('modalTips').textContent = destination.tips;
+  destinationModal.show();
+}
+
+searchInput.addEventListener('input', renderDestinations);
+categoryFilter.addEventListener('change', renderDestinations);
+document.querySelectorAll('#categoryButtons button').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('#categoryButtons button').forEach(item => item.classList.remove('active-filter'));
+    button.classList.add('active-filter');
+    categoryFilter.value = button.dataset.category;
+    renderDestinations();
+  });
+});
+renderDestinations();
+</script>
+<script src="Scripts/site.js"></script>
+
+</body>
+</html>

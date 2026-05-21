@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Antique Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+
+<nav class="custom-navbar navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="images/antique-seal.png" class="logo-img" alt="Seal">
+      <span>Antique Tourism</span>
+    </a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon d-lg-none">Menu</label>
+    <div class="nav-wrapper ms-auto">
+      <ul class="navbar-nav align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="destinations.html">Destinations</a>
+          <ul class="dropdown-menu">
+            <li><a href="destinations.html">Mararison Island</a></li>
+            <li><a href="destinations.html">Tibiao</a></li>
+            <li><a href="destinations.html">Malumpati Cold Spring</a></li>
+            <li><a href="destinations.html">Rice Terraces</a></li>
+            <li><a href="destinations.html">Aningalan</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="festivals.html">Festivals &amp; Culture</a></li>
+        <li class="nav-item"><a class="nav-link" href="food.html">Food &amp; Delicacies</a></li>
+        <li class="nav-item"><a class="nav-link" href="tips.html">Travel Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="inquiry.html">Inquiry</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="sub-hero gallery-bg">
+  <div class="container">
+    <h1>Photo Gallery</h1>
+    <p class="lead">A visual journey through Antique's breathtaking beauty</p>
+  </div>
+</section>
+
+<section class="container my-5">
+  <div class="info-box p-4 p-md-5">
+    <span class="section-label">Visuals</span>
+    <h2 class="section-title mt-1">Glimpses of Antique</h2>
+    <div class="section-divider" style="margin:0 0 20px;"></div>
+    <p class="text-muted mb-0">This gallery contains 30 Antique-themed entries. Click any item to open a larger preview with next and previous controls.</p>
+  </div>
+</section>
+
+<section class="container mb-4">
+  <div class="d-flex flex-wrap gap-2 justify-content-center" id="galleryFilters">
+    <button class="btn rounded-pill px-4 gallery-filter active-filter" data-filter="all">All</button>
+    <button class="btn rounded-pill px-4 gallery-filter" data-filter="nature">Nature</button>
+    <button class="btn rounded-pill px-4 gallery-filter" data-filter="beach">Beaches</button>
+    <button class="btn rounded-pill px-4 gallery-filter" data-filter="culture">Culture</button>
+    <button class="btn rounded-pill px-4 gallery-filter" data-filter="highland">Highlands</button>
+    <button class="btn rounded-pill px-4 gallery-filter" data-filter="food">Food</button>
+  </div>
+</section>
+
+<section class="container mb-5">
+  <div class="row g-3 balanced-grid" id="galleryGrid"></div>
+</section>
+
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
+  <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&lsaquo;</button>
+  <div class="lightbox-content">
+    <div class="media-frame lightbox-image" id="lightboxImage"></div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+  <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">&rsaquo;</button>
+</div>
+
+<section class="stat-strip text-center py-5">
+  <div class="container">
+    <h2 style="color:white;" class="mb-3">Ready to See It in Person?</h2>
+    <p style="color:rgba(255,255,255,0.8);" class="mb-4">Book your trip or send us an inquiry to plan your Antique adventure.</p>
+    <a href="inquiry.html" class="hero-btn">Send an Inquiry</a>
+  </div>
+</section>
+
+<footer class="custom-footer text-white pt-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-3 mb-4">
+        <img src="images/antique-seal.png" width="56" class="mb-2 mx-auto mx-md-0 d-block d-md-inline" alt="Seal">
+        <h5 class="mt-2">Antique Tourism</h5>
+        <p>Discover the hidden paradise!</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6>Explore</h6>
+        <ul>
+          <li><a href="festivals.html">Festivals &amp; Culture</a></li>
+          <li><a href="food.html">Food &amp; Delicacies</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="tips.html">Travel Tips</a></li>
+          <li><a href="inquiry.html">Inquiry</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6>Location</h6>
+        <p>Western Visayas, Antique, Philippines</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom text-center py-3">Copyright 2026 Antique Tourism. All rights reserved.</div>
+</footer>
+
+<script>
+const galleryItems = [
+  ['Island off Culasi, Antique', 'beach', 'https://commons.wikimedia.org/wiki/Special:FilePath/Island%20off%20Culasi%2C%20Antique.jpg'],
+  ['Mararison Island', 'beach', 'https://commons.wikimedia.org/wiki/Special:FilePath/Mararison%20Island.jpg'],
+  ['Seco Island Sandbar', 'beach', 'https://commons.wikimedia.org/wiki/Special:FilePath/Seco%20Island%2C%20Antique.jpg'],
+  ['Antique Coastal Destination', 'beach', 'images/destinations.jpg'],
+  ['Mararison Local View', 'beach', 'images/mararison.jpg'],
+  ['Antique Hero Landscape', 'nature', 'images/hero.avif'],
+  ['Antique Province Overview', 'nature', 'images/antique-overview.jpg'],
+  ['Antique Landscape View', 'nature', 'images/antique-overview.avif'],
+  ['Tibiao River Area', 'nature', 'images/tibiao.jpg'],
+  ['Antique Adventure Activity', 'adventure', 'images/adventure.JPG'],
+  ['Antique Natural Area', 'nature', 'images/nature.jpg'],
+  ['Antique Rice Terraces', 'highland', 'images/rice.jpg'],
+  ['Aningalan, San Remigio', 'highland', 'https://commons.wikimedia.org/wiki/Special:FilePath/Brgy%20Aningalan%2C%20San%20Remegio%2C%20Antique.JPG'],
+  ['Aningalan Local View', 'highland', 'images/aningalan.jpg'],
+  ['Antique Festival Scene', 'culture', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSDt0Q5H-ibzp3y_tkZMx442iMRhyS67HgGg&s'],
+  ['Binirayan Festival of Antique', 'culture', 'https://commons.wikimedia.org/wiki/Special:FilePath/Binirayan%20Festival%20of%20Antique.jpg'],
+  ['Pahinis Festival', 'culture', 'images/pahinis.png'],
+  ['Antique Cultural Performance', 'culture', 'images/culture.jpg'],
+  ['Antique Festival Celebration', 'culture', 'images/festivals.jpg'],
+  ['Local Weaving Craft', 'culture', 'images/weaving.jpg'],
+  ['Heritage Church Visit', 'culture', 'images/aniniy.jpg'],
+  ['Antique Landmark', 'culture', 'images/landmarks.jpg'],
+  ['Patnongon Heritage Site', 'culture', 'images/patnongon.jpg'],
+  ['Hamtic Heritage View', 'culture', 'images/hamtic.jpg'],
+  ['Kinaray-a Craft Traditions', 'culture', 'images/crafts.jpg'],
+  ['Banigan Local Craft', 'culture', 'images/banigan.jpg'],
+  ['Antique Pottery', 'culture', 'images/pottery.jpg'],
+  ['Antique Local Food', 'food', 'images/food.jpg'],
+  ['Bamboo-Cooked Food', 'food', 'images/bamboo.jpg'],
+  ['Bandi Pasalubong', 'food', 'images/bandi.jpg']
+].map(([caption, category, image, missing], index) => ({ caption, category, image, missing, number: index + 1 }));
+
+let currentFilter = 'all';
+let visibleItems = [...galleryItems];
+let currentIndex = 0;
+
+const galleryGrid = document.getElementById('galleryGrid');
+const lightbox = document.getElementById('galleryLightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxCounter = document.getElementById('lightboxCounter');
+
+function renderGallery() {
+  visibleItems = galleryItems.filter(item => currentFilter === 'all' || item.category === currentFilter);
+  galleryGrid.innerHTML = visibleItems.map((item, index) => `
+    <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+      <button class="gallery-thumb rounded shadow" type="button" onclick="openLightbox(${index})">
+        <img src="${item.image}" class="image-fill" alt="${item.caption}">
+        <span>${item.caption}</span>
+        <small>Photo ${item.number}</small>
+      </button>
+    </div>
+  `).join('');
+}
+
+function openLightbox(index) {
+  currentIndex = index;
+  updateLightbox();
+  lightbox.classList.add('show');
+  lightbox.setAttribute('aria-hidden', 'false');
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('show');
+  lightbox.setAttribute('aria-hidden', 'true');
+}
+
+function moveLightbox(step) {
+  currentIndex = (currentIndex + step + visibleItems.length) % visibleItems.length;
+  updateLightbox();
+}
+
+function updateLightbox() {
+  const item = visibleItems[currentIndex];
+  lightboxImage.innerHTML = `<img src="${item.image}" class="image-fill" alt="${item.caption}">`;
+  lightboxCounter.textContent = `${currentIndex + 1} / ${visibleItems.length}`;
+  lightboxCaption.textContent = `${item.caption} - ${item.category.charAt(0).toUpperCase() + item.category.slice(1)} gallery`;
+}
+
+document.querySelectorAll('.gallery-filter').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.gallery-filter').forEach(filter => filter.classList.remove('active-filter'));
+    button.classList.add('active-filter');
+    currentFilter = button.dataset.filter;
+    renderGallery();
+  });
+});
+
+document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+document.querySelector('.lightbox-prev').addEventListener('click', () => moveLightbox(-1));
+document.querySelector('.lightbox-next').addEventListener('click', () => moveLightbox(1));
+lightbox.addEventListener('click', event => {
+  if (event.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', event => {
+  if (!lightbox.classList.contains('show')) return;
+  if (event.key === 'Escape') closeLightbox();
+  if (event.key === 'ArrowLeft') moveLightbox(-1);
+  if (event.key === 'ArrowRight') moveLightbox(1);
+});
+
+renderGallery();
+</script>
+<script src="Scripts/site.js"></script>
+
+</body>
+</html>
